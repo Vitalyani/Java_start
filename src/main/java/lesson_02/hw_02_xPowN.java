@@ -15,11 +15,12 @@ public class hw_02_xPowN {
         System.out.println(xPowN(1.1, 2_147_483_647)); //pow = 2^31 - 1
         System.out.println(xPowN(1.1, -2_147_483_648)); //pow = -2^31
     }
+
     private static double xPowN(double base, int pow) {
-        if(pow == 0) return 1;
-        if(pow == 1) return base;
-        if(base == 0 || base == 1) return base;
-        if(pow < 0) {
+        if (pow == 0) return 1;
+        if (pow == 1) return base;
+        if (base == 0 || base == 1) return base;
+        if (pow < 0) {
             return 1 / base * xPowN(1 / base, -(pow + 1));
         }
         double half = xPowN(base, pow / 2);

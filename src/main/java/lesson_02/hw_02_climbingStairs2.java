@@ -10,12 +10,17 @@ public class hw_02_climbingStairs2 {
         System.out.println(climbStairs2(25));
         System.out.println(climbStairs2(45));
     }
+
     public static int climbStairs2(int n) {
         int[] cache = new int[n + 1];
-        if(n == 0) return 1;
-        if(n < 0) return 0;
-        if(cache[n] != 0) return cache[n];
-        cache[n] = climbStairs2(n - 1) + climbStairs2(n - 2);
+        if (n == 0) return 1;
+        if (n < 0) return 0;
+        if (cache[n] == 0) {
+            cache[n] = climbStairs2(n - 1) + climbStairs2(n - 2);
+        }
         return cache[n];
+//        if (cache[n] != 0) return cache[n];
+//        cache[n] = climbStairs2(n - 1) + climbStairs2(n - 2);
+//        return cache[n];
     }
 }
